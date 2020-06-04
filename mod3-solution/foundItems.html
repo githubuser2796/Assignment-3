@@ -1,4 +1,12 @@
-<ul>
-  <li ng-repeat="items in crtl.foundItems">
-    {{  }}
-</ul>
+<div class="row">
+  <div ng-repeat="items in crtl.foundItems">
+    <div class="clearfix" ng-if="$index % 2 == 0"></div>
+    <div class="col-md-6">
+      <h2>{{ items.name }}</h2>
+      <h3>{{ items.short_name }}</h3>
+      <p> {{ items.description }} </p>
+
+    <button class="btn btn-primary" ng-click="ctrl.onRemove({ index: $index })"> Don't want this one! </button>
+    </div>
+  </div>
+</div>
