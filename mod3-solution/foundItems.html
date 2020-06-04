@@ -1,12 +1,13 @@
 <div class="row">
-  <div ng-repeat="items in crtl.foundItems">
+  <div ng-repeat="item in ctrl.foundItems">
     <div class="clearfix" ng-if="$index % 2 == 0"></div>
     <div class="col-md-6">
-      <h2>{{ items.name }}</h2>
-      <h3>{{ items.short_name }}</h3>
-      <p> {{ items.description }} </p>
+      <h2>{{ item.name }}</h2>
+      <h3>{{ item.short_name }}</h3>
+      <p> {{ item.description }} </p>
 
     <button class="btn btn-primary" ng-click="ctrl.onRemove({ index: $index })"> Don't want this one! </button>
     </div>
   </div>
 </div>
+<div class="alert" ng-show="ctrl.onEmpty">Nothing Found!</div>
